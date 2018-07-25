@@ -1,6 +1,10 @@
+.main_menu_wrapper {
+  position: relative;
+  vertical-align: top;
+}
+
 .main_menu {
   text-align: center;
-  position: relative;
   height: 60px;
   bottom: 0;
   left: 0;
@@ -15,7 +19,9 @@
   overflow-x: auto;
   vertical-align: top;
   white-space: nowrap;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main_menu a {
@@ -48,15 +54,106 @@
   width: 0;
 }
 
+.main_menu .navigation_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_menu .navigation_form #search_result {
+  position: absolute;
+  display: none;
+  top: 100%;
+  z-index: 100;
+  left: 10%;
+  width: 80%;
+  height: auto;
+  right: auto;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 0 solid #dae1e7;
+  padding: 5px;
+  text-align: left;
+}
+
+.main_menu .navigation_form #search_result p {
+  margin: 0;
+  padding: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: bold;
+  color: #c94e5d;
+}
+
+.main_menu .navigation_form #search_result ul {
+  margin: 0;
+  padding: 0px 10px;
+  list-style: none;
+}
+
+.main_menu .navigation_form #search_result ul li a {
+  font-size: 14px;
+  color: #333;
+  padding: 0;
+}
+
+.main_menu .form_div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+}
+
+.main_menu .form_div input {
+  padding: 5px;
+  color: #c94e5d;
+  width: 200px;
+}
+
+.main_menu .form_div input:focus {
+  outline: 1px solid #c94e5d;
+}
+
+.main_menu .logo {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+}
+
+.main_menu .logo a {
+  border: 1px solid white;
+  display: inline-block;
+  background: salmon;
+}
+
 .wrapper {
   position: relative;
 }
 
 #sidebar {
-  float: left;
   background: beige;
   border-right: 1px solid tomato;
-  width: 280px;
+  width: 270px;
   height: calc(100vh - 60px);
   display: block;
   float: left;
@@ -76,7 +173,7 @@
   #sidebar {
     float: none;
     position: absolute;
-    left: -280px;
+    left: -270px;
     top: 0px;
     -webkit-transition: left 0.3s linear;
     transition: left 0.3s linear;
@@ -121,7 +218,7 @@
 }
 
 .content_area {
-  width: calc(100vw - 280px);
+  width: calc(100vw - 270px);
   float: right;
 }
 

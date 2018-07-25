@@ -1,0 +1,115 @@
+.main_menu_wrapper {
+  position: relative;
+  vertical-align:top; 
+}
+.main_menu {
+	text-align: center;
+  height: 60px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #c94e5d;
+  z-index: 2;
+  /*
+   vertical-align by default baseline.
+   if i give overflow-x auto it makes a break after element
+   If we give vertical-align: top; it solved the problem
+   */
+  overflow-x: auto;
+  vertical-align:top; 
+  white-space: nowrap;
+  display: flex;
+  a {
+		display: inline-block;
+		font-size: 20px;
+		padding:15px;
+		box-sizing: border-box;
+	  color: white;
+	  text-decoration: none;
+	  position: relative;
+	  &:hover {
+			text-decoration: underline;
+	  }
+	  &:after {
+			content: "";
+			width: 2px;
+			height: 30px;
+			background: rgba(255, 255, 255, .4);
+			position: absolute;
+			top: 14px;
+			right: -5px;
+	  }
+		&:last-child:after {
+		  height: 0;
+		  width: 0;
+		}
+  }
+  .navigation_form {
+  	display: flex;
+  	width: 100%;
+    justify-content: space-between;
+    #search_result {
+      position: absolute;
+      display: none;
+      top: 100%;
+      z-index: 100;
+      left: 10%;
+      width: 80%;
+      height: auto;
+      right: auto;
+      background: #fff;
+      box-shadow: 0 1px 0 0 rgba(0,0,0,.2), 0 2px 3px 0 rgba(0,0,0,.1);
+      border: 0 solid #dae1e7;
+      padding: 5px;
+      text-align: left;
+      p {
+        margin: 0;
+        padding: 2px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        text-align: center;
+        font-weight: bold;
+        color: $primary_color;
+      }
+      ul {
+        margin: 0;
+        padding: 0px 10px;
+        list-style: none;
+        li {
+          a {
+            font-size: 14px;
+            color: #333;
+            padding: 0;
+          }
+        }
+      }
+
+    }
+  }
+  .form_div {
+  	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    input {
+    	padding: 5px;
+    	color: $primary_color;
+    	width: 200px;
+    	&:focus {
+    		outline: 1px solid $primary_color;
+    	}
+    }
+  }
+  .logo {
+  	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    a {
+    	border: 1px solid white;
+	    display: inline-block;
+	    background: salmon;
+    }
+  }
+}
